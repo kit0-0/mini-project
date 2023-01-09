@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: rgb(142, 215, 143);
+        background: linear-gradient(
+          90deg,
+          rgba(142, 215, 143, 0.6222864145658263) 56%,
+          rgba(34, 193, 195, 1) 95%
+        );
+      }
+      .form {
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        margin: 10px;
+      }
+      .btn:hover {
+        filter: brightness(0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <form class="form" id="form">
+      <h4 class="score" id="score">score: 0</h4>
+      <h1 id="question">What is 1 multiply by 1?</h1>
+      <input
+        type="text"
+        class="input"
+        id="input"
+        placeholder="Enter your answer"
+        autofocus
+        autocomplete="off"
+      />
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <script>
+      let n1 = Math.ceil(Math.random() * 10);
+      let n2 = Math.ceil(Math.random() * 10);
+
+      const question = document.getElementById("question");
+      const form = document.getElementById("form");
+      const input = document.getElementById("input");
+      const boardscore = document.getElementById("score");
+
+      let score = JSON.parse(localStorage.getItem("score"));
+
+      if (!score) {
+        score = 0;
+      }
+      boardscore.innerText = `score: ${score}`;
+
+      question.innerText = `what is ${n1} multiple by ${n2}?`;
+
+      const correctAnswer = n1 * n2;
+      form.addEventListener("submit", () => {
+        const userans = +input.value;
+        if (userans === correctAnswer) {
+          score++;
+          updateScore();
+        } else {
+          score--;
+          updateScore();
+        }
+      });
+
+      function updateScore() {
+        localStorage.setItem("score", JSON.stringify(score));
+      }
+    </script>
+  </body>
+</html>
