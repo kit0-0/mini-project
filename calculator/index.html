@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #2f363e;
+      }
+      .menu {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .menu button {
+        position: absolute;
+        left: 0;
+        background: transparent;
+        transition: 0.5s;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        color: var(--clr);
+        border: 2px solid var(--clr);
+        font-size: 1.5em;
+        transform-origin: 240px;
+        transform: rotate(calc(360deg / 19 * var(--i))) translateX(0);
+      }
+      .menu button:hover,
+      .toggle:hover {
+        background: var(--clr);
+        color: #333;
+        box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr),
+          0 0 50px var(--clr);
+      }
+      .menu .toggle {
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        background: #2f363e;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <input
+        style="--clr: #fff"
+        type="text"
+        class="toggle"
+        id="screen"
+        placeholder="0"
+      />
+
+      <button style="--i: 0; --clr: #ff2972" class="symbol" onclick="wipe()">
+        C
+      </button>
+      <button style="--i: 1; --clr: #04fc43" class="symbol" onclick="show('/')">
+        /
+      </button>
+      <button style="--i: 2; --clr: #fe00f1" class="symbol" onclick="show('*')">
+        *
+      </button>
+
+      <button style="--i: 3; --clr: #fee800" class="number" onclick="show('7')">
+        7
+      </button>
+      <button style="--i: 4; --clr: #00b0fe" class="number" onclick="show('8')">
+        8
+      </button>
+      <button style="--i: 5; --clr: #fea600" class="number" onclick="show('9')">
+        9
+      </button>
+      <button style="--i: 6; --clr: #a529ff" class="symbol" onclick="show('-')">
+        -
+      </button>
+
+      <button style="--i: 7; --clr: #01bdab" class="number" onclick="show('4')">
+        4
+      </button>
+      <button style="--i: 8; --clr: #ff2972" class="number" onclick="show('5')">
+        5
+      </button>
+      <button style="--i: 9; --clr: #04fc43" class="number" onclick="show('6')">
+        6
+      </button>
+      <button
+        style="--i: 10; --clr: #fe00f1"
+        class="symbol"
+        onclick="show('+')"
+      >
+        +
+      </button>
+
+      <button
+        style="--i: 11; --clr: #fee800"
+        class="number"
+        onclick="show('1')"
+      >
+        1
+      </button>
+      <button
+        style="--i: 12; --clr: #00b0fe"
+        class="number"
+        onclick="show('2')"
+      >
+        2
+      </button>
+      <button
+        style="--i: 13; --clr: #fea600"
+        class="number"
+        onclick="show('3')"
+      >
+        3
+      </button>
+      <button
+        style="--i: 14; --clr: #a529ff"
+        class="symbol"
+        onclick="show('.')"
+      >
+        .
+      </button>
+
+      <button
+        style="--i: 15; --clr: #01bdab"
+        class="number"
+        onclick="show('(')"
+      >
+        (
+      </button>
+      <button
+        style="--i: 16; --clr: #ff2972"
+        class="number"
+        onclick="show('0')"
+      >
+        0
+      </button>
+      <button
+        style="--i: 17; --clr: #04fc43"
+        class="number"
+        onclick="show(')')"
+      >
+        )
+      </button>
+      <button
+        style="--i: 18; --clr: #fe00f1"
+        class="symbol"
+        onclick="calc('=')"
+      >
+        =
+      </button>
+    </div>
+
+    <script>
+      let screen = document.getElementById("screen");
+      const wipe = () => {
+        screen.value = "";
+      };
+      const show = (n) => {
+        screen.value += n;
+      };
+
+      const calc = () => {
+        screen.value = eval(screen.value);
+      };
+    </script>
+  </body>
+</html>
