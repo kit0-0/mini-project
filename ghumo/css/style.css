@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --main-color: #ff0;
+  --light-white: rgba(255, 255, 255, 0.5);
+  --light-black: rgba(0, 0, 0, 0.3);
+  --light-bg: rgba(255, 255, 255, 0.1);
+  --white: #fff;
+  --black: #000;
+}
+
+* {
+  font-family: "Comfortaa", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+html {
+  font-size: 63%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+*::selection {
+  background-color: var(--main-color);
+  color: var(--black);
+}
+
+body {
+  background-color: var(--black);
+}
+.container {
+  padding-top: 10rem;
+}
+section {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, transparent, var(--black));
+  z-index: 1000;
+}
+
+.header .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.header .flex .logo {
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+.header .flex .navbar a {
+  margin-left: 2rem;
+  font-size: 1.8rem;
+  color: var(--light-white);
+  transition: 0.2s linear;
+}
+
+.header .flex .navbar a:hover {
+  color: var(--white);
+}
+
+#menu-btn {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--white);
+  display: none;
+}
+
+.home {
+  background: url("../images/home-bg.jpg") no-repeat rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+.home .flex {
+  min-height: calc(100vh - 10rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .flex form {
+  background-color: var(--light-bg);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 50rem;
+  backdrop-filter: blur(0.4rem);
+}
+
+.home .flex form h3 {
+  font-size: 2.5rem;
+  color: var(--white);
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.home .flex form p {
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--light-white);
+}
+
+.home .flex form .box {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: var(--white);
+  text-transform: none;
+  background: var(--light-black);
+  margin: 1rem 0;
+}
+
+.home .flex form .box::placeholder {
+  color: var(--light-white);
+}
+
+.heading {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 7rem;
+  color: var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.btn {
+  display: block;
+  border-radius: 0.5rem;
+  padding: 1.2rem 3rem;
+  background: var(--main-color);
+  color: var(--black);
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  transition: 0.2s linear;
+}
+
+.btn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* media queries  */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .header .flex {
+    position: relative;
+  }
+
+  .header .flex .navbar {
+    position: absolute;
+    top: 100%;
+    left: 2rem;
+    right: 2rem;
+    background-color: var(--light-black);
+    backdrop-filter: blur(0.4rem);
+    border-radius: 0.5rem;
+    transform: scale(0);
+    transform-origin: top right;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .header .flex .navbar.active {
+    transform: scale(1);
+    transition: 0.2s linear;
+  }
+
+  .header .flex .navbar a {
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    color: var(--white);
+    border-radius: 0.5rem;
+  }
+
+  .header .flex .navbar a:hover {
+    background-color: var(--light-bg);
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+}
