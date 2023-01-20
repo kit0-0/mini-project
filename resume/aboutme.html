@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main Start -->
+    <div class="main">
+      <!-- About Section start -->
+
+      <section class="about-section sec-padding">
+        <div class="container">
+          <div class="row">
+            <div class="section-title">
+              <h2>About me</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="about-img">
+              <div class="box">
+                <img src="Screenshot 2023-01-20 020311.png" alt="about img" />
+              </div>
+            </div>
+            <div class="about-text">
+              <p>
+                I am excellent coder with great problem-solving skills and
+                ability to perform well in a team and Passionate in coding. I
+                use a creative approach to problem solve. I am a positive,
+                enthusiastic and competent Web Developer .
+              </p>
+              <h3>Skills</h3>
+              <div class="skills">
+                <div class="skill-item">Material UI</div>
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">express.js</div>
+                <div class="skill-item">Tailwind CSS</div>
+                <div class="skill-item">bootstrap</div>
+                <div class="skill-item">Data structure & Algorithm</div>
+                <div class="skill-item">javascript</div>
+                <div class="skill-item">node.js</div>
+                <div class="skill-item">react.js</div>
+                <div class="skill-item">mongodb</div>
+                <div class="skill-item">OOP</div>
+                <div class="skill-item">RESTful API</div>
+                <div class="skill-item">next.js</div>
+                <div class="skill-item">Firebase</div>
+              </div>
+              <div class="about-tabs">
+                <button
+                  type="button"
+                  class="tab-item active"
+                  data-target="#education"
+                >
+                  education
+                </button>
+                <button
+                  type="button"
+                  class="tab-item"
+                  data-target="#experience"
+                >
+                  experience
+                </button>
+              </div>
+
+              <!-- Education section starts -->
+              <div class="tab-content" id="education">
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <span class="date"> 2019 - Present</span>
+                    <h4>
+                      Bachelor of Technology -<span>computer science</span>
+                    </h4>
+                    <p>
+                      Sagar institute of research and technology - Bhopal,india
+                    </p>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="date"> 2017 - 2019</span>
+                    <h4>12th Board</h4>
+                    <p>S.B college - Ara,bihar</p>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="date"> 2016 - 2017</span>
+                    <h4>10th Board</h4>
+                    <p>D.A.V Public school</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Education section End -->
+
+              <!-- experience start -->
+              <div class="tab-content active" id="experience">
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <span class="date"> 2022 - Present</span>
+                    <h4>
+                      Intern-Tech -
+                      <span> LIQVID eLearning Services Pvt Ltd</span>
+                    </h4>
+                    <p>
+                      Liqvid eLearning Services is a digital learning company
+                      that provides eLearning content development, Artificial
+                      Intelligence-driven learning<br />
+                      * Web developer
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- experience end -->
+
+              <a href="#" class="btn">download cv</a>
+              <a href="#" class="btn">contact me</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- About Section End -->
+
+    <!-- Main End -->
+
+    <script>
+      const tabsContainer = document.querySelector(".about-tabs");
+      aboutSection = document.querySelector(".about-section");
+      tabsContainer.addEventListener("click", (e) => {
+        if (
+          e.target.classList.contains("tab-item") &&
+          !e.target.classList.contains("active")
+        ) {
+          tabsContainer.querySelector(".active").classList.remove("active");
+          e.target.classList.add("active");
+          const target = e.target.getAttribute("data-target");
+          aboutSection
+            .querySelector(".tab-content.active")
+            .classList.remove("active");
+          aboutSection.querySelector(target).classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>
