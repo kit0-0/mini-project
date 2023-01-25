@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* FONTS */
+      @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+      :root {
+        --main-color: #e02f6b;
+        --white-alpha-40: rgba(255, 255, 255, 0.4);
+        --white-alpha-25: rgba(255, 255, 255, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+      body {
+        background: #e3f2fd;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+        justify-content: center;
+      }
+
+      .container .color {
+        background: #fff;
+        list-style: none;
+        margin: 13px;
+        padding: 7px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(52, 87, 220, 0, 0.08);
+        transition: transform 0.3s ease;
+        border-radius: 60%;
+        overflow: hidden;
+      }
+
+      .container .color:active {
+        transform: scale(0.95);
+      }
+      .color .rect-box {
+        width: 185px;
+        height: 188px;
+        border-radius: 5px;
+        background: #8a6cff;
+      }
+      .color:hover .rect-box {
+        filter: brightness(106%);
+      }
+      .color .hex-value {
+        display: block;
+        color: #444;
+        margin: 12px 0 8px;
+        font-size: 1.15rem;
+        font-weight: 500;
+      }
+
+      .refresh-btn {
+        position: fixed;
+        left: 50%;
+        bottom: 40px;
+        background-color: var(--white-alpha-25);
+        border: 1px solid var(--white-alpha-40);
+        padding: 10px 28px;
+        border-radius: 30px;
+        color: var(--main-color);
+        font-weight: 500;
+        text-transform: capitalize;
+        font-family: inherit;
+        font-size: 16px;
+        cursor: pointer;
+        user-select: none;
+        overflow: hidden;
+        vertical-align: middle;
+        transition: color 0.3s ease;
+        z-index: 1;
+      }
+
+      .refresh-btn:hover {
+        color: #fff;
+      }
+
+      .refresh-btn::before {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 0;
+        background-color: var(--main-color);
+        z-index: -1;
+        border-radius: 30px;
+        transition: width 0.3s ease;
+        -webkit-transition: width 0.3s ease;
+        -moz-transition: width 0.3s ease;
+        -ms-transition: width 0.3s ease;
+        -o-transition: width 0.3s ease;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+      }
+
+      .refresh-btn:hover::before {
+        width: 100%;
+      }
+    </style>
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <ul class="container"></ul>
+    <button class="refresh-btn">Refresh Palette</button>
+  </body>
+</html>
