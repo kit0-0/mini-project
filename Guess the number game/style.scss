@@ -1,0 +1,111 @@
+$color_1: #0000ff;
+$color_2: #e02f6b;
+$color_3: inherit;
+$color_4: #222;
+$font-family_1: 'Press Start 2P', sans-serif;
+$font-family_2: inherit;
+$background-color_1: #222;
+$background-color_2: #eee;
+$background-color_3: #ccc;
+
+@import "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+body {
+	font-family: $font-family_1;
+	color: $color_1;
+	background-color: $background-color_1;
+}
+header {
+	position: relative;
+	height: 35vh;
+	border-bottom: 7px solid #eee;
+}
+main {
+	height: 65vh;
+	color: $color_1;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.left {
+	width: 52rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.right {
+	width: 52rem;
+	font-size: 2rem;
+}
+h1 {
+	font-size: 4rem;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	top: 52%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.number {
+	background: #eee;
+	color: $color_2;
+	font-size: 6rem;
+	width: 15rem;
+	padding: 3rem 0rem;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
+.between {
+	font-size: 1.4rem;
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+}
+.again {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+}
+.guess {
+	background: none;
+	border: 4px solid #eee;
+	font-family: $font-family_2;
+	color: $color_3;
+	font-size: 5rem;
+	padding: 2.5rem;
+	width: 25rem;
+	text-align: center;
+	display: block;
+	margin-bottom: 3rem;
+}
+.btn {
+	border: none;
+	background-color: $background-color_2;
+	color: $color_4;
+	font-size: 2rem;
+	font-family: $font-family_2;
+	padding: 2rem 3rem;
+	cursor: pointer;
+	&:hover {
+		background-color: $background-color_3;
+	}
+}
+.message {
+	margin-bottom: 8rem;
+	height: 3rem;
+}
+.label-score {
+	margin-bottom: 2rem;
+}
